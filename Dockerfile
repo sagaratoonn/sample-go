@@ -1,5 +1,7 @@
 FROM golang
+EXPOSE 8080
 WORKDIR /go/src
 RUN go get github.com/smartystreets/goconvey
 COPY . .
-RUN ${GOPATH}/bin/goconvey
+# CMD ["goconvey",  "-host", "0.0.0.0"]
+RUN goconvey -host 0.0.0.0 -launchBrowser=false
