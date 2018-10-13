@@ -2,4 +2,4 @@ FROM golang
 WORKDIR /go/src
 RUN go get github.com/smartystreets/goconvey
 COPY . .
-RUN ${GOPATH}/goconvey
+RUN ${GOPATH}/bin/goconvey
